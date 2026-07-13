@@ -1,0 +1,71 @@
+/* @font-face {
+	font-family: 'Satoshi';
+	src: url('../fonts/Satoshi-Regular.woff2') format('woff2');
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Satoshi';
+	src: url('../fonts/Satoshi-Medium.woff2') format('woff2');
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Satoshi';
+	src: url('../fonts/Satoshi-Bold.woff2') format('woff2');
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Integral CF';
+	src: url('../fonts/Integral-CF-Bold.woff2') format('woff2');
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'FSP DEMO Integral CF';
+	src: url('../fonts/FSP-DEMO-Integral-CF-Heavy.woff2') format('woff2');
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+} */
+
+@font-face {
+	font-family: 'Onest';
+	src: url('../fonts/Onest-Regular.woff2') format('woff2');
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Onest';
+	src: url('../fonts/Onest-Medium.woff2') format('woff2');
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Onest';
+	src: url('../fonts/Onest-Bold.woff2') format('woff2');
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Onest';
+	src: url('../fonts/Onest-Black.woff2') format('woff2');
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+}

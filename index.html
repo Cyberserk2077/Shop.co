@@ -1,0 +1,1323 @@
+<!doctype html>
+<html class="page" lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shop.co</title>
+
+		<link href="./css/main.css" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+		/>
+		<link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon" />
+		<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer></script>
+		<script src="./scripts/main.js" type="module"></script>
+	</head>
+	<body class="page__body">
+		<header class="header">
+			<div class="header__promo">
+				<div class="header__promo-inner container">
+					<div class="header__promo-inner-wrapper">
+						<p class="header__promo-text hidden-tablet">
+							Зарегистрируйтесь и получите скидку 20% на первую покупку.
+						</p>
+						<a class="header__promo-link" href="/">Зарегистрироваться сейчас</a>
+					</div>
+					<button class="header__promo-close-button" type="button">
+						<svg class="header__promo-close-button-icon" width="20" height="20">
+							<use href="./icons/sprite.svg#cross-white"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+			<div class="header__body">
+				<div class="header__body-inner container">
+					<div class="header__body-inner-wrapper">
+						<button
+							class="header__burger-button burger-button visible-mobile"
+							aria-label="Открыть меню"
+							aria-expanded="false"
+							aria-controls="header__menu"
+						>
+							<svg width="24" height="24">
+								<use
+									class="burger-button__menu"
+									href="./icons/sprite.svg#burger"
+								></use>
+								<use
+									class="burger-button__cross"
+									href="./icons/sprite.svg#cross-black"
+								></use>
+							</svg>
+						</button>
+						<a class="header__logo logo" href="./index.html">
+							<img
+								class="logo__image"
+								src="./images/logo.svg"
+								alt="Логотип Shop.co"
+								width="160"
+								height="22"
+							/>
+						</a>
+					</div>
+					<nav class="header__menu">
+						<ul class="header__menu-list">
+							<li class="header__menu-item">
+								<a class="header__menu-link" href="#">
+									Магазин
+									<svg class="header__menu-select-icon" width="16" height="16">
+										<use href="./icons/sprite.svg#select"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="header__menu-item">
+								<a class="header__menu-link" href="#">Скидки</a>
+							</li>
+							<li class="header__menu-item">
+								<a class="header__menu-link" href="#new-arrivals">
+									Новые поступления
+								</a>
+							</li>
+							<li class="header__menu-item">
+								<a class="header__menu-link" href="#brands">Бренды</a>
+							</li>
+						</ul>
+					</nav>
+					<form class="search-form hidden-desktop">
+						<label class="search-form__label">
+							<svg class="search-form__icon" width="24" height="24">
+								<use href="./icons/sprite.svg#search-light"></use>
+							</svg>
+							<input
+								class="search-form__input"
+								type="search"
+								name="search"
+								placeholder="Искать товары..."
+							/>
+						</label>
+					</form>
+					<div class="header__actions">
+						<button
+							class="header__actions-button hidden-desktop-above"
+							type="button"
+							aria-label="Искать товар"
+							title="Искать товар"
+						>
+							<svg class="header__search-icon" width="24" height="24">
+								<use href="./icons/sprite.svg#search-black"></use>
+							</svg>
+						</button>
+						<button
+							class="header__actions-button"
+							type="button"
+							aria-label="Корзина"
+							title="Корзина"
+						>
+							<svg class="header__order-icon" width="24" height="24">
+								<use href="./icons/sprite.svg#cart"></use>
+							</svg>
+						</button>
+						<button
+							class="header__actions-button"
+							type="button"
+							aria-label="Авторизоваться"
+							title="Авторизоваться"
+						>
+							<svg class="header__auth-icon" width="24" height="24">
+								<use href="./icons/sprite.svg#auth"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<section class="hero" aria-labelledby="hero-title">
+				<div class="hero__inner">
+					<div class="hero__body">
+						<div class="hero__body-inner container">
+							<div class="hero__main">
+								<h1 class="hero__title" id="hero-title">
+									НАЙДИ ОДЕЖДУ КОТОРАЯ ВЫРАЗИТ ТВОЙ СТИЛЬ
+								</h1>
+								<p class="hero__description">
+									Просмотрите наш набор тщательно сделанной одежды, созданный
+									чтобы подчеркнуть ваш индивидуальный стиль.
+								</p>
+								<button
+									class="hero__button button"
+									type="button"
+									data-js-modal-button="buy"
+									data-js-modal-speed="300"
+								>
+									Купить сейчас
+								</button>
+								<div class="hero__metrics metrics">
+									<ul class="metrics__list">
+										<li class="metrics__item">
+											<div class="metrics__key">Всемирных брендов</div>
+											<div class="metrics__value">
+												200<span class="metrics__sign">+</span>
+											</div>
+										</li>
+										<li class="metrics__item">
+											<div class="metrics__key">Качественных товаров</div>
+											<div class="metrics__value">
+												2,000<span class="metrics__sign">+</span>
+											</div>
+										</li>
+										<li class="metrics__item">
+											<div class="metrics__key">Счастливых клиентов</div>
+											<div class="metrics__value">
+												30,000<span class="metrics__sign">+</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="hero__image-wrapper">
+								<img
+									class="hero__star hero__star--left"
+									src="./images/hero/star-s.svg"
+									alt=""
+								/>
+								<img
+									class="hero__star hero__star--right"
+									src="./images/hero/star-l.svg"
+									alt=""
+								/>
+								<picture>
+									<source
+										srcset="./images/hero/hero-bg.webp"
+										type="image/webp"
+									/>
+									<img
+										class="hero__image"
+										src="./images/hero/hero-bg.png"
+										alt="Парень и девушка, одетые в белые толстовки и черные джинсовые куртки"
+										width="535"
+										height="636"
+									/>
+								</picture>
+							</div>
+						</div>
+					</div>
+					<div class="hero__brands" id="brands">
+						<div class="hero__brands-inner container">
+							<h2 class="visually-hidden">Наши бренды</h2>
+							<ul class="hero__brands-list">
+								<li class="hero__brands-item hero__brands-item--versace">
+									<img
+										class="hero__brands-image"
+										src="./images/hero/brands/1.svg"
+										alt="Логотип бренда Versace"
+										width="167"
+										height="34"
+										loading="lazy"
+									/>
+								</li>
+								<li class="hero__brands-item hero__brands-item--zara">
+									<img
+										class="hero__brands-image"
+										src="./images/hero/brands/2.svg"
+										alt="Логотип бренда Zara"
+										width="91"
+										height="38"
+										loading="lazy"
+									/>
+								</li>
+								<li class="hero__brands-item hero__brands-item--gucci">
+									<img
+										class="hero__brands-image"
+										src="./images/hero/brands/3.svg"
+										alt="Логотип бренда Gucci"
+										width="156"
+										height="36"
+										loading="lazy"
+									/>
+								</li>
+								<li class="hero__brands-item hero__brands-item--prada">
+									<img
+										class="hero__brands-image"
+										src="./images/hero/brands/4.svg"
+										alt="Логотип бренда Prada"
+										width="194"
+										height="32"
+										loading="lazy"
+									/>
+								</li>
+								<li class="hero__brands-item hero__brands-item--calvin-klein">
+									<img
+										class="hero__brands-image"
+										src="./images/hero/brands/5.svg"
+										alt="Логотип бренда Calvin Klein"
+										width="207"
+										height="34"
+										loading="lazy"
+									/>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section
+				id="new-arrivals"
+				class="new-arrivals"
+				aria-labelledby="new-arrivals-title"
+			>
+				<div class="new-arrivals__inner container">
+					<h2 class="new-arrivals__title" id="new-arrivals-title">
+						Новые поступления
+					</h2>
+					<div class="products">
+						<ul class="products__list">
+							<li class="products__list-item">
+								<div class="product-card">
+									<header class="product-card__header">
+										<picture>
+											<source
+												srcset="./images/new-arrivals/1.webp"
+												type="image/webp"
+											/>
+											<img
+												class="product-card__image"
+												src="./images/new-arrivals/1.png"
+												alt="Черная футболка с белыми надписями на груди и рукавах"
+												width="295"
+												height="298"
+												loading="lazy"
+											/>
+										</picture>
+									</header>
+									<footer class="product-card__footer">
+										<h3 class="product-card__title">Футболка с лентой</h3>
+										<div
+											class="product-card__rating-view rating-view"
+											aria-label="Рейтинг 5 звезд"
+											title="Рейтинг 5 звезд"
+										>
+											<div class="rating-view__stars-wrapper">
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--half"
+												></div>
+											</div>
+											<span class="rating-view__value">
+												4.5/
+												<span
+													class="rating-view__value rating-view__value--gray"
+													>5</span
+												>
+											</span>
+										</div>
+										<div class="product-card__price">
+											<span class="product-card__cost">₽5000</span>
+										</div>
+									</footer>
+								</div>
+							</li>
+							<li class="products__list-item">
+								<div class="product-card">
+									<header class="product-card__header">
+										<picture>
+											<source
+												srcset="./images/new-arrivals/2.webp"
+												type="image/webp"
+											/>
+											<img
+												class="product-card__image"
+												src="./images/new-arrivals/2.png"
+												alt="Синие узкие джинсы"
+												width="295"
+												height="298"
+												loading="lazy"
+											/>
+										</picture>
+									</header>
+									<footer class="product-card__footer">
+										<h3 class="product-card__title">Узкие джинсы</h3>
+										<div
+											class="product-card__rating-view rating-view"
+											aria-label="Рейтинг 5 звезд"
+											title="Рейтинг 5 звезд"
+										>
+											<div class="rating-view__stars-wrapper">
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--half"
+												></div>
+											</div>
+											<span class="rating-view__value">
+												3.5/<span
+													class="rating-view__value rating-view__value--gray"
+													>5</span
+												>
+											</span>
+										</div>
+										<div
+											class="product-card__price product-card__price--discount"
+										>
+											<span class="product-card__cost product-card__cost--new"
+												>₽5000</span
+											>
+											<span class="product-card__cost product-card__cost--old">
+												₽6000
+											</span>
+											<span class="product-card__badge">-20%</span>
+										</div>
+									</footer>
+								</div>
+							</li>
+							<li class="products__list-item">
+								<div class="product-card">
+									<header class="product-card__header">
+										<picture>
+											<source
+												srcset="./images/new-arrivals/3.webp"
+												type="image/webp"
+											/>
+											<img
+												class="product-card__image"
+												src="./images/new-arrivals/3.png"
+												alt="Сине-красно-белая клетчатая рубашка"
+												width="295"
+												height="298"
+												loading="lazy"
+											/>
+										</picture>
+									</header>
+									<footer class="product-card__footer">
+										<h3 class="product-card__title">Клетчатая рубашка</h3>
+										<div
+											class="product-card__rating-view rating-view"
+											aria-label="Рейтинг 5 звезд"
+											title="Рейтинг 5 звезд"
+										>
+											<div class="rating-view__stars-wrapper">
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--half"
+												></div>
+											</div>
+											<span class="rating-view__value">
+												4.5/<span
+													class="rating-view__value rating-view__value--gray"
+													>5</span
+												>
+											</span>
+										</div>
+										<div class="product-card__price">
+											<span class="product-card__cost">₽7000</span>
+										</div>
+									</footer>
+								</div>
+							</li>
+							<li class="products__list-item">
+								<div class="product-card">
+									<header class="product-card__header">
+										<picture>
+											<source
+												srcset="./images/new-arrivals/4.webp"
+												type="image/webp"
+											/>
+											<img
+												class="product-card__image"
+												src="./images/new-arrivals/4.png"
+												alt="Оранжевая футболка с черными рукавами и черными полосками"
+												width="295"
+												height="298"
+												loading="lazy"
+											/>
+										</picture>
+									</header>
+									<footer class="product-card__footer">
+										<h3 class="product-card__title">Футболка с полосами</h3>
+										<div
+											class="product-card__rating-view rating-view"
+											aria-label="Рейтинг 5 звезд"
+											title="Рейтинг 5 звезд"
+										>
+											<div class="rating-view__stars-wrapper">
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--half"
+												></div>
+											</div>
+											<span class="rating-view__value">
+												4.5/<span
+													class="rating-view__value rating-view__value--gray"
+													>5</span
+												>
+											</span>
+										</div>
+										<div
+											class="product-card__price product-card__price--discount"
+										>
+											<span class="product-card__cost product-card__cost--new"
+												>₽6000</span
+											>
+											<span class="product-card__cost product-card__cost--old">
+												₽8000
+											</span>
+											<span class="product-card__badge">-30%</span>
+										</div>
+									</footer>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<button
+						class="new-arrivals__button button button--transparent"
+						type="button"
+					>
+						Просмотреть всё
+					</button>
+				</div>
+			</section>
+			<section class="top-sales" aria-labelledby="top-sales-title">
+				<div class="top-sales__inner container">
+					<h2 class="top-sales__title" id="top-sales-title">Лидеры продаж</h2>
+					<div class="products">
+						<ul class="products__list">
+							<li class="products__list-item">
+								<div class="product-card">
+									<header class="product-card__header">
+										<picture>
+											<source
+												srcset="./images/top-sales/1.webp"
+												type="image/webp"
+											/>
+											<img
+												class="product-card__image"
+												src="./images/top-sales/1.png"
+												alt="Зеленая рубашка в серую полоску с белыми пуговицами"
+												width="295"
+												height="298"
+												loading="lazy"
+											/>
+										</picture>
+									</header>
+									<footer class="product-card__footer">
+										<h3 class="product-card__title">Рубашка в полоску</h3>
+										<div
+											class="product-card__rating-view rating-view"
+											aria-label="Рейтинг 5 звезд"
+											title="Рейтинг 5 звезд"
+										>
+											<div class="rating-view__stars-wrapper">
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+											</div>
+											<span class="rating-view__value">
+												5.0/<span
+													class="rating-view__value rating-view__value--gray"
+													>5</span
+												>
+											</span>
+										</div>
+										<div
+											class="product-card__price product-card__price--discount"
+										>
+											<span class="product-card__cost product-card__cost--new"
+												>₽5000</span
+											>
+											<span class="product-card__cost product-card__cost--old">
+												₽6000
+											</span>
+											<span class="product-card__badge">-20%</span>
+										</div>
+									</footer>
+								</div>
+							</li>
+							<li class="products__list-item">
+								<div class="product-card">
+									<header class="product-card__header">
+										<picture>
+											<source
+												srcset="./images/top-sales/2.webp"
+												type="image/webp"
+											/>
+											<img
+												class="product-card__image"
+												src="./images/top-sales/2.png"
+												alt="Оранжевая футболка с белой надписю 'Courage' посередине"
+												width="295"
+												height="298"
+												loading="lazy"
+											/>
+										</picture>
+									</header>
+									<footer class="product-card__footer">
+										<h3 class="product-card__title">Футболка «Courage»</h3>
+										<div
+											class="product-card__rating-view rating-view"
+											aria-label="Рейтинг 5 звезд"
+											title="Рейтинг 5 звезд"
+										>
+											<div class="rating-view__stars-wrapper">
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+											</div>
+											<span class="rating-view__value">
+												4.0/<span
+													class="rating-view__value rating-view__value--gray"
+													>5</span
+												>
+											</span>
+										</div>
+										<div class="product-card__price">
+											<span class="product-card__cost">₽5000</span>
+										</div>
+									</footer>
+								</div>
+							</li>
+							<li class="products__list-item">
+								<div class="product-card">
+									<header class="product-card__header">
+										<picture>
+											<source
+												srcset="./images/top-sales/3.webp"
+												type="image/webp"
+											/>
+											<img
+												class="product-card__image"
+												src="./images/top-sales/3.png"
+												alt="Джинсовые шорты бермуды"
+												width="295"
+												height="298"
+												loading="lazy"
+											/>
+										</picture>
+									</header>
+									<footer class="product-card__footer">
+										<h3 class="product-card__title">Свободные бермуды</h3>
+										<div
+											class="product-card__rating-view rating-view"
+											aria-label="Рейтинг 5 звезд"
+											title="Рейтинг 5 звезд"
+										>
+											<div class="rating-view__stars-wrapper">
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+											</div>
+											<span class="rating-view__value">
+												3.0/<span
+													class="rating-view__value rating-view__value--gray"
+													>5</span
+												>
+											</span>
+										</div>
+										<div class="product-card__price">
+											<span class="product-card__cost">₽4000</span>
+										</div>
+									</footer>
+								</div>
+							</li>
+							<li class="products__list-item">
+								<div class="product-card">
+									<header class="product-card__header">
+										<picture>
+											<source
+												srcset="./images/top-sales/4.webp"
+												type="image/webp"
+											/>
+											<img
+												class="product-card__image"
+												src="./images/top-sales/4.png"
+												alt="Чёрные узкие джинсы с потертостями на коленях"
+												width="295"
+												height="298"
+												loading="lazy"
+											/>
+										</picture>
+									</header>
+									<footer class="product-card__footer">
+										<h3 class="product-card__title">Потертые узкие джинсы</h3>
+										<div
+											class="product-card__rating-view rating-view"
+											aria-label="Рейтинг 5 звезд"
+											title="Рейтинг 5 звезд"
+										>
+											<div class="rating-view__stars-wrapper">
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--full"
+												></div>
+												<div
+													class="rating-view__star rating-view__star--half"
+												></div>
+											</div>
+											<span class="rating-view__value">
+												4.5/<span
+													class="rating-view__value rating-view__value--gray"
+													>5</span
+												>
+											</span>
+										</div>
+										<div class="product-card__price">
+											<span class="product-card__cost">₽7000</span>
+										</div>
+									</footer>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<button
+						class="top-sales__button button button--transparent"
+						type="button"
+					>
+						Просмотреть всё
+					</button>
+				</div>
+			</section>
+			<section class="your-style" aria-labelledby="your-style-title">
+				<div class="your-style__inner container">
+					<h2 class="your-style__title" id="your-style-title">
+						Выбери свой&nbsp;стиль
+					</h2>
+					<ul class="your-style__list">
+						<li class="your-style__list-item your-style__list-item--narrow">
+							<picture>
+								<source srcset="./images/your-style/1.webp" type="image/webp" />
+								<img
+									class="your-style__list-image"
+									src="./images/your-style/1.jpg"
+									alt="Мужчина в белой повседневной футболке"
+									width="1221"
+									height="867"
+									loading="lazy"
+								/>
+							</picture>
+							<h3 class="your-style__list-title">Свободный</h3>
+						</li>
+						<li class="your-style__list-item your-style__list-item--wide">
+							<picture>
+								<source srcset="./images/your-style/2.webp" type="image/webp" />
+								<img
+									class="your-style__list-image"
+									src="./images/your-style/2.jpg"
+									alt="Мужчина в белой рубашке и черном пиджаке в белую клетку"
+									width="2052"
+									height="867"
+									loading="lazy"
+								/>
+							</picture>
+							<h3 class="your-style__list-title">Формальный</h3>
+						</li>
+						<li class="your-style__list-item your-style__list-item--wide">
+							<picture>
+								<source srcset="./images/your-style/3.webp" type="image/webp" />
+								<img
+									class="your-style__list-image"
+									src="./images/your-style/3.jpg"
+									alt="Женщина в бежевом свитере"
+									width="1926"
+									height="867"
+									loading="lazy"
+								/>
+							</picture>
+							<h3 class="your-style__list-title">Вечерний</h3>
+						</li>
+						<li class="your-style__list-item your-style__list-item--narrow">
+							<picture>
+								<source srcset="./images/your-style/4.webp" type="image/webp" />
+								<img
+									class="your-style__list-image"
+									src="./images/your-style/4.jpg"
+									alt="Мужчина в синей майке с ганетелей в руке"
+									width="1062"
+									height="867"
+									loading="lazy"
+								/>
+							</picture>
+							<h3 class="your-style__list-title">Спорт</h3>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="about" aria-labelledby="about-title">
+				<header class="about__header container">
+					<h2 class="about__title" id="about-title">ЧТО О НАС ГОВОРЯТ</h2>
+					<div class="about__controls">
+						<button class="about__button about__prev-button" type="button">
+							<svg class="about__icon" width="24" height="24">
+								<use href="./icons/controls.svg#arrow-prev"></use>
+							</svg>
+						</button>
+						<button class="about__button about__next-button" type="button">
+							<svg class="about__icon" width="24" height="24">
+								<use href="./icons/controls.svg#arrow-next"></use>
+							</svg>
+						</button>
+					</div>
+				</header>
+				<div class="swiper about__slider">
+					<div class="swiper-wrapper about__slider-wrapper">
+						<div class="swiper-slide about__slider-slide">
+							<div class="about__slide-inner">
+								<div class="feedback-card">
+									<div
+										class="feedback-card__stars-wrapper rating-view__stars-wrapper"
+									>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+									</div>
+									<div class="feedback-card__author">
+										<p class="feedback-card__author-name h4">Виталий У.</p>
+										<img
+											class="feedback-card__checkmark"
+											src="./icons/checkmark-green.svg"
+											alt=""
+											width="24"
+											height="24"
+											loading="lazy"
+										/>
+									</div>
+									<p class="feedback-card__text">
+										«Я в восторге от качества и стиля одежды, которую получил от
+										Shop.co. От повседневных вещей до элегантных платьев —
+										каждая покупка превзошла мои ожидания.»
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide about__slider-slide">
+							<div class="about__slide-inner">
+								<div class="feedback-card">
+									<div
+										class="feedback-card__stars-wrapper rating-view__stars-wrapper"
+									>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+									</div>
+									<div class="feedback-card__author">
+										<p class="feedback-card__author-name h4">Даниил В.</p>
+										<img
+											class="feedback-card__checkmark"
+											src="./icons/checkmark-green.svg"
+											alt=""
+											width="24"
+											height="24"
+											loading="lazy"
+										/>
+									</div>
+									<p class="feedback-card__text">
+										«Раньше было трудно найти одежду под мой стиль, пока я не
+										открыл Shop.co. Их ассортимент впечатляет и подходит для
+										разных вкусов и случаев.»
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide about__slider-slide">
+							<div class="about__slide-inner">
+								<div class="feedback-card">
+									<div
+										class="feedback-card__stars-wrapper rating-view__stars-wrapper"
+									>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+									</div>
+									<div class="feedback-card__author">
+										<p class="feedback-card__author-name h4">Альберт Б.</p>
+										<img
+											class="feedback-card__checkmark"
+											src="./icons/checkmark-green.svg"
+											alt=""
+											width="24"
+											height="24"
+											loading="lazy"
+										/>
+									</div>
+									<p class="feedback-card__text">
+										«Я всегда ищу уникальные модные вещи и был рад открыть для
+										себя Shop.co. Их выбор одежды очень разнообразен и полностью
+										соответствует последним модным трендам.»
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide about__slider-slide">
+							<div class="about__slide-inner">
+								<div class="feedback-card">
+									<div
+										class="feedback-card__stars-wrapper rating-view__stars-wrapper"
+									>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+									</div>
+									<div class="feedback-card__author">
+										<p class="feedback-card__author-name h4">Матвей К.</p>
+										<img
+											class="feedback-card__checkmark"
+											src="./icons/checkmark-green.svg"
+											alt=""
+											width="24"
+											height="24"
+											loading="lazy"
+										/>
+									</div>
+									<p class="feedback-card__text">
+										«Я всегда ищу уникальные модные вещи и рад, что открыл
+										Shop.co. Их ассортимент одежды разнообразен и полностью
+										соответствует последним модным тенденциям.»
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide about__slider-slide">
+							<div class="about__slide-inner">
+								<div class="feedback-card">
+									<div
+										class="feedback-card__stars-wrapper rating-view__stars-wrapper"
+									>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+										<div
+											class="rating-view__star rating-view__star--full"
+										></div>
+									</div>
+									<div class="feedback-card__author">
+										<p class="feedback-card__author-name h4">Максим А.</p>
+										<img
+											class="feedback-card__checkmark"
+											src="./icons/checkmark-green.svg"
+											alt=""
+											width="24"
+											height="24"
+											loading="lazy"
+										/>
+									</div>
+									<p class="feedback-card__text">
+										«Я впечатлён качеством и стилем одежды от Shop.co. От
+										повседневных вещей до элегантных платьев — каждая покупка
+										превзошла мои ожидания.»
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="last-news" aria-labelledby="last-news-title">
+				<div class="last-news__inner container">
+					<div class="last-news__banner">
+						<h2 class="last-news__title" id="last-news-title">
+							БУДЬТЕ В КУРСЕ ВСЕХ ПОСЛЕДНИХ НОВОСТЕЙ
+						</h2>
+						<div class="last-news__subscribe">
+							<form class="last-news__subscribe-form">
+								<label class="last-news__subscribe-label">
+									<svg class="last-news__subscribe-icon" width="24" height="24">
+										<use href="./icons/sprite.svg#email"></use>
+									</svg>
+									<input
+										class="last-news__subscribe-input"
+										type="email"
+										name="email"
+										placeholder="Ваша почта"
+									/>
+								</label>
+							</form>
+							<button class="last-news__subscribe-button button" type="submit">
+								Подписаться на рассылку
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__body">
+				<div class="footer__body-inner container">
+					<nav class="footer__menu">
+						<div class="footer__menu-column footer__menu-column--large">
+							<a class="footer__logo logo" href="./index.html">
+								<img
+									class="logo__image"
+									src="./images/logo.svg"
+									alt="Логотип Shop.co"
+									width="160"
+									height="22"
+								/>
+							</a>
+							<p class="footer__menu-about">
+								У нас есть одежда, что подходит вашему стилю и которой можно
+								гордиться. Для женщин и мужчин.
+							</p>
+							<div class="footer__soc1als soc1als">
+								<ul class="soc1als__list">
+									<li class="soc1als__item">
+										<a class="soc1als__link" href="/" target="_blank">
+											<svg class="soc1als__icon" width="28" height="28">
+												<use href="./icons/socials.svg#twitter"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="soc1als__item">
+										<a class="soc1als__link" href="/" target="_blank">
+											<svg class="soc1als__icon" width="28" height="28">
+												<use href="./icons/socials.svg#facebook"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="soc1als__item">
+										<a class="soc1als__link" href="/" target="_blank">
+											<svg class="soc1als__icon" width="28" height="28">
+												<use href="./icons/socials.svg#instagramm"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="soc1als__item">
+										<a class="soc1als__link" href="/" target="_blank">
+											<svg class="soc1als__icon" width="28" height="28">
+												<use href="./icons/socials.svg#github"></use>
+											</svg>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer__menu-column">
+							<a class="footer__menu-main-link" href="/">Компания</a>
+							<ul class="footer__menu-list">
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank"
+										>О нас
+									</a>
+								</li>
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank"
+										>Функции
+									</a>
+								</li>
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank">
+										Работы
+									</a>
+								</li>
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank"
+										>Карьера
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__menu-column">
+							<a class="footer__menu-main-link" href="/">Помощь</a>
+							<ul class="footer__menu-list">
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank"
+										>Поддержка
+									</a>
+								</li>
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank"
+										>Доставка
+									</a>
+								</li>
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank"
+										>Условия
+									</a>
+								</li>
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank"
+										>Политика
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__menu-column">
+							<a class="footer__menu-main-link" href="/">Вопросы</a>
+							<ul class="footer__menu-list">
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank"
+										>Аккаунт
+									</a>
+								</li>
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank"
+										>О доставке
+									</a>
+								</li>
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank"
+										>Заказы
+									</a>
+								</li>
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank"
+										>Платежи
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__menu-column">
+							<a class="footer__menu-main-link" href="/">Ресурсы</a>
+							<ul class="footer__menu-list">
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank"
+										>Бесплатные книги
+									</a>
+								</li>
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank"
+										>Уроки
+									</a>
+								</li>
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank">Блог</a>
+								</li>
+								<li class="footer__menu-item">
+									<a class="footer__menu-link" href="/" target="_blank"
+										>Плейлис на YouTube
+									</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<div class="footer__extra">
+				<div class="footer__extra-inner container">
+					<p class="footer__copyright">
+						Shop.co &copy;
+						<time datetime="2000">2000</time>
+						-
+						<time datetime="2023">2023 </time>
+						. Все права защищены
+					</p>
+					<ul class="footer__payment-list">
+						<li class="footer__payment-list-item">
+							<div class="payment-card">
+								<svg class="payment-card__icon" width="33" height="11">
+									<use href="./icons/payment.svg#visa"></use>
+								</svg>
+							</div>
+						</li>
+						<li class="footer__payment-list-item">
+							<div class="payment-card">
+								<svg class="payment-card__icon" width="26" height="16">
+									<use href="./icons/payment.svg#mastercard"></use>
+								</svg>
+							</div>
+						</li>
+						<li class="footer__payment-list-item">
+							<div class="payment-card">
+								<svg class="payment-card__icon" width="35" height="10">
+									<use href="./icons/payment.svg#paypal"></use>
+								</svg>
+							</div>
+						</li>
+						<li class="footer__payment-list-item">
+							<div class="payment-card">
+								<svg class="payment-card__icon" width="27" height="12">
+									<use href="./icons/payment.svg#apple-pay"></use>
+								</svg>
+							</div>
+						</li>
+						<li class="footer__payment-list-item">
+							<div class="payment-card">
+								<svg class="payment-card__icon" width="29" height="12">
+									<use href="./icons/payment.svg#google-pay"></use>
+								</svg>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<div class="modal">
+			<div class="modal__window modal-buy" data-js-modal-window="buy">
+				<button
+					class="modal__close-button"
+					type="button"
+					aria-label="Закрыть"
+					title="Закрыть"
+					data-js-modal-close
+				>
+					<svg width="24" height="24">
+						<use
+							class="modal__close-icon"
+							href="./icons/sprite.svg#cross-gray"
+						></use>
+					</svg>
+				</button>
+				<div class="modal__content modal-buy__content">
+					<h3 class="modal-buy__title">Заявка на заказ</h3>
+					<form class="modal-buy__form">
+						<label class="modal-buy__label">
+							<input
+								class="modal-buy__input"
+								type="text"
+								name="name"
+								placeholder="Ваше имя"
+								required
+							/>
+						</label>
+						<label class="modal-buy__label">
+							<input
+								class="modal-buy__input"
+								type="tel"
+								name="phone"
+								placeholder="Номер телефона"
+								required
+							/>
+						</label>
+						<label class="modal-buy__label">
+							<input
+								class="modal-buy__input"
+								type="email"
+								name="email"
+								placeholder="E-mail"
+								required
+							/>
+						</label>
+						<button class="modal-buy__submit" type="button">Отправить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

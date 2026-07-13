@@ -1,0 +1,180 @@
+.hero__body {
+  background-color: var(--color-gray-light);
+}
+
+@media (width > 768px) {
+  .hero__body {
+    padding-top: 106px;
+  }
+}
+
+@media (width <= 768px) {
+  .hero__body {
+    padding-top: 40px;
+  }
+}
+
+.hero__body-inner {
+  position: relative;
+  display: flex;
+}
+
+@media (width <= 1200px) {
+  .hero__body-inner {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+}
+
+.hero__main {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  max-width: 644px;
+}
+
+@media (width > 1024px) {
+  .hero__main {
+    row-gap: 32px;
+  }
+}
+
+@media (width <= 1024px) {
+  .hero__main {
+    row-gap: 20px;
+  }
+}
+
+.hero__title {
+  line-height: 1.12;
+}
+
+@media (width > 1024px) {
+  .hero__description {
+    line-height: 138%;
+  }
+}
+
+@media (width <= 1024px) {
+  .hero__description {
+    font-size: 14px;
+    line-height: 157%;
+  }
+}
+
+@media (width <= 768px) {
+  .hero__button {
+    width: 100%;
+  }
+}
+
+@media (width > 768px) {
+  .hero__metrics {
+    margin-top: 16px;
+  }
+}
+
+@media (width <= 768px) {
+  .hero__metrics {
+    align-self: center;
+  }
+}
+
+.hero__image-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.hero__star {
+  --starLeftSize: 56px;
+  --starRightSize: 104px;
+
+  position: absolute;
+  pointer-events: none;
+}
+
+.hero__star--left {
+  width: var(--starLeftSize);
+  top: 38%;
+  left: 5px;
+}
+
+@media (width <= 480px) {
+  .hero__star--left {
+    --starLeftSize: 44px;
+  }
+}
+
+.hero__star--right {
+  width: var(--starRightSize);
+  top: 30px;
+  right: -10px;
+}
+
+@media (width <= 480px) {
+  .hero__star--right {
+    --starRightSize: 76px;
+  }
+}
+
+.hero__brands {
+  background-color: var(--color-dark);
+}
+
+@media (width > 768px) {
+  .hero__brands {
+    padding-block: 44px;
+  }
+}
+
+@media (width <= 768px) {
+  .hero__brands {
+    padding-block: 39px;
+  }
+}
+
+@media (width > 1024px) {
+  .hero__brands-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 34px;
+  }
+}
+
+@media (width <= 1024px) {
+  .hero__brands-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 22px 34px;
+  }
+}
+
+.hero__brands-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (width <= 1024px) {
+  .hero__brands-item--versace,
+  .hero__brands-item--zara,
+  .hero__brands-item--gucci {
+    grid-column: span 2;
+  }
+
+  .hero__brands-item--prada,
+  .hero__brands-item--calvin-klein {
+    grid-column: span 3;
+  }
+}
+
+@media (width <= 768px) {
+  .hero__brands-image {
+    max-height: 26px;
+    width: auto;
+  }
+}

@@ -1,0 +1,27 @@
+@import './normalize.css';
+@import './fonts.css';
+@import './variables.css';
+@import './utils.css';
+@import './globals.css';
+
+@import './blocks/modal.css';
+@import './blocks/modal-buy.css';
+@import './blocks/feedback-card.css';
+@import './blocks/rating-view.css';
+@import './blocks/products.css';
+@import './blocks/product-card.css';
+@import './blocks/metrics.css';
+@import './blocks/button.css';
+@import './blocks/soc1als.css';
+@import './blocks/payment-card.css';
+@import './blocks/burger-button.css';
+@import './blocks/search-form.css';
+@import './blocks/logo.css';
+@import './blocks/header.css';
+@import './blocks/hero.css';
+@import './blocks/new-arrivals.css';
+@import './blocks/top-sales.css';
+@import './blocks/your-style.css';
+@import './blocks/about.css';
+@import './blocks/last-news.css';
+@import './blocks/footer.css';

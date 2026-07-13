@@ -1,0 +1,152 @@
+.product-card {
+	display: flex;
+	flex-direction: column;
+}
+
+@media (width > 768px) {
+	.product-card {
+		row-gap: 16px;
+	}
+}
+
+@media (width <= 768px) {
+	.product-card {
+		row-gap: 11px;
+	}
+}
+
+.product-card__header {
+	width: 100%;
+	overflow: hidden;
+}
+
+@media (width > 768px) {
+	.product-card__header {
+		height: 298px;
+	}
+}
+
+@media (width <= 768px) {
+	.product-card__header {
+		height: 200px;
+	}
+}
+
+.product-card__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+@media (width > 768px) {
+	.product-card__image {
+		border-radius: var(--border-radius-s);
+	}
+}
+
+@media (width <= 768px) {
+	.product-card__image {
+		border-radius: var(--border-radius-xs);
+	}
+}
+
+.product-card__footer {
+	display: flex;
+	flex-direction: column;
+}
+
+@media (width > 768px) {
+	.product-card__footer {
+		row-gap: 8px;
+	}
+}
+
+@media (width <= 768px) {
+	.product-card__footer {
+		row-gap: 5px;
+	}
+}
+
+@media (width > 768px) {
+	.product-card__title {
+		font-size: 20px;
+	}
+}
+
+@media (width <= 768px) {
+	.product-card__title {
+		font-size: 14px;
+	}
+}
+
+.product-card__price--discount {
+	display: flex;
+	align-items: center;
+}
+
+@media (width > 768px) {
+	.product-card__price--discount {
+		column-gap: 10px;
+	}
+}
+
+@media (width <= 768px) {
+	.product-card__price--discount {
+		column-gap: 5px;
+	}
+}
+
+.product-card__cost {
+	font-weight: 500;
+	color: var(--color-dark);
+}
+
+@media (width > 768px) {
+	.product-card__cost {
+		font-size: 20px;
+	}
+}
+
+@media (width <= 768px) {
+	.product-card__cost {
+		font-size: 18px;
+	}
+}
+
+@media (width > 768px) {
+	.product-card__cost--new,
+	.product-card__cost--old {
+		font-size: 24px;
+	}
+}
+
+.product-card__cost--old {
+	text-decoration: line-through;
+	color: var(--cost-old-color);
+}
+
+.product-card__badge {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: var(--border-radius-xl);
+	color: #ff3333;
+	background-color: #ff33331a;
+}
+
+@media (width > 768px) {
+	.product-card__badge {
+		height: 28px;
+		padding-inline: 13px;
+		font-size: 12px;
+	}
+}
+
+@media (width <= 768px) {
+	.product-card__badge {
+		height: 20px;
+		padding-inline: 7px;
+		font-size: 10px;
+	}
+}

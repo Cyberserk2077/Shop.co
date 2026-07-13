@@ -1,0 +1,9 @@
+.logo__image {
+	flex-shrink: 0;
+}
+
+@media (width <= 576px) {
+	.logo__image {
+		max-width: 144px;
+	}
+}

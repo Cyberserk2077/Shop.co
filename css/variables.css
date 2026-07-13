@@ -1,0 +1,35 @@
+:root {
+  --color-light: #ffffff;
+  --color-dark: #000000;
+  --color-gray: #9a9999;
+  --color-gray-alt: #f0f0f0;
+  --color-gray-light: #f2f0f1;
+  --text-color: #00000099;
+  --cost-old-color: #00000066;
+
+  /* --font-family-base: 'Satoshi', sans-serif;
+  --font-family-accent: 'FSP DEMO Integral CF', sans-serif; */
+
+  --font-family-base: 'Onest', sans-serif;
+
+  --container-width: 1240px;
+  --container-padding-x: 16px;
+
+  --border-radius-xl: 62px;
+  --border-radius-l: 40px;
+  --border-radius-s: 20px;
+  --border-radius-xs: 13px;
+  --border-radius-xxs: 5px;
+
+  --border: 1px solid #0000001a;
+
+  --transition-duration: 0.2s;
+
+  --shadow: 0 0 5px 2px var(--color-gray);
+
+  --layer-negative: -1;
+  --layer-0: 0;
+  --layer-1: 1;
+  --layer-2: 2;
+  --layer-3: 3;
+}

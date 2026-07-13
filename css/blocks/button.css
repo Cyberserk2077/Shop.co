@@ -1,0 +1,29 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  padding-inline: 47px;
+  border-radius: var(--border-radius-l);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+@media (any-hover: hover) {
+  .button:hover {
+    background-color: var(--text-color);
+  }
+}
+
+.button--transparent {
+  border: var(--border);
+  color: var(--color-dark);
+  background-color: transparent;
+}
+
+@media (any-hover: hover) {
+  .button--transparent:hover {
+    color: var(--color-light);
+  }
+}
+

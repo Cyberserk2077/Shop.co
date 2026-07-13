@@ -1,0 +1,21 @@
+.search-form__label {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: 12px;
+  width: 462px;
+  padding: 14px 16px;
+  border-radius: var(--border-radius-xl);
+  background-color: var(--color-gray-alt);
+  border: none;
+}
+
+.search-form__input {
+  width: 100%;
+  background-color: var(--color-gray-alt);
+  border: none;
+}
+
+.search-form__input:focus-visible {
+  outline: none;
+}

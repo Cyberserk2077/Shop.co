@@ -1,0 +1,23 @@
+.payment-card {
+	--cardWidth: 46px;
+	--cardHeight: 30px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: var(--cardWidth);
+	height: var(--cardHeight);
+	background-color: var(--color-light);
+	border-radius: var(--border-radius-xxs);
+	border: 0.22px solid #d6dce5;
+	box-shadow:
+		0 0px 4px 0 #b7b7b714,
+		0 4px 9px 0 #b7b7b714;
+}
+
+@media (width <= 768px) {
+	.payment-card {
+		--cardWidth: 40px;
+		--cardHeight: 26px;
+	}
+}

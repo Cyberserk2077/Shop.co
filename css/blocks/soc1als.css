@@ -1,0 +1,16 @@
+.soc1als__list {
+	display: flex;
+	column-gap: 12px;
+}
+
+.soc1als__link {
+	display: flex;
+	width: 28px;
+	height: 28px;
+}
+
+@media (any-hover: hover) {
+	.soc1als__link:hover {
+		opacity: 0.5;
+	}
+}

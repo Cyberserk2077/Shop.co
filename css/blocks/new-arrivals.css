@@ -1,0 +1,61 @@
+.new-arrivals__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: var(--border);
+}
+
+@media (width > 768px) {
+  .new-arrivals__inner {
+    padding-top: 72px;
+    padding-bottom: 64px;
+  }
+}
+
+@media (width <= 1200px) {
+  .new-arrivals__inner {
+    margin-inline: 16px;
+  }
+}
+
+@media (width <= 768px) {
+  .new-arrivals__inner {
+    padding-top: 52px;
+    padding-bottom: 40px;
+  }
+}
+
+.new-arrivals__title {
+  text-align: center;
+}
+
+@media (width > 768px) {
+  .new-arrivals__title {
+    margin-bottom: 55px;
+  }
+}
+
+@media (width <= 768px) {
+  .new-arrivals__title {
+    margin-bottom: 32px;
+  }
+}
+
+@media (width > 768px) {
+  .new-arrivals .products {
+    margin-bottom: 36px;
+  }
+}
+
+@media (width <= 768px) {
+  .new-arrivals .products {
+    margin-bottom: 27px;
+  }
+}
+
+@media (width <= 480px) {
+  .new-arrivals__button {
+    width: 100%;
+  }
+}
+
