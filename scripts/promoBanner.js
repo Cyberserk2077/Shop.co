@@ -4,6 +4,8 @@ export const initPromoBanner = () => {
 
 	if (!promo || !closeButton) return
 
+	closeButton.hidden = false
+
 	closeButton.addEventListener('click', () => {
 		promo.hidden = true
 	})

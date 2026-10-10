@@ -2,31 +2,38 @@ import BurgerMenu from './burgerButton.js'
 import Modal from './modal.js'
 import { aboutSlider } from './aboutSlider.js'
 import { initPromoBanner } from './promoBanner.js'
+import { initDemoForms } from './forms.js'
 
-try {
-	new BurgerMenu({
+const initializers = [
+	() => new BurgerMenu({
 		BURGER: 'burger-button',
 		BURGER_OPEN: 'burger-button--open',
 		HEADER_MENU: 'header__menu',
 		HEADER_MENU_OPEN: 'header__menu--open',
-		lABEL: {
-			OPEN: 'Открыть меню',
-			CLOSE: 'Закрыть меню',
-		},
-		PAGE_BODY: 'page__body',
-		PAGE_BODY_NO_SCROLL: 'page__body--locked',
-		MENU_LINK: 'menu__link',
+		MENU_LINK: 'header__menu-link',
 		BREAKPOINT: 768,
-		MAIN: 'main',
-	})
+	}),
+	() => new Modal(),
+	initDemoForms,
+	initPromoBanner,
+]
 
-	new Modal({
-		PAGE_BODY: 'page__body',
-		PAGE_BODY_NO_SCROLL: 'page__body--locked',
-	})
+initializers.forEach((initialize) => {
+	try {
+		initialize()
+	} catch (error) {
+		console.error('Не удалось инициализировать компонент:', error)
+	}
+})
 
-	aboutSlider()
-	initPromoBanner()
-} catch (error) {
-	console.error(error)
+// Swiper загружается независимо: остальные компоненты не ждут CDN.
+const initSlider = () => {
+	try {
+		aboutSlider()
+	} catch (error) {
+		console.error('Не удалось инициализировать слайдер:', error)
+	}
 }
+
+if (document.readyState === 'complete') initSlider()
+else window.addEventListener('load', initSlider, { once: true })

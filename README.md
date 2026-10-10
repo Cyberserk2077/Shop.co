@@ -1,37 +1,35 @@
 # Shop.co
 
-Responsive fashion e-commerce landing page built with HTML, CSS and JavaScript.
+Адаптивный демонстрационный лендинг магазина одежды на HTML, CSS и JavaScript. Сохранены композиция Shop.co, русскоязычный контент и локальные изображения и шрифты. Проект предназначен для портфолио.
 
-## Live Demo
+## Запуск
 
-[View website](https://cyberserk2077.github.io/shop-co/)
-
-## About
-
-Shop.co is a responsive landing page for a modern fashion store.
-
-The project includes adaptive sections, interactive navigation, modal windows and a customer reviews slider.
-
-## Features
-
-- Responsive layout
-- Mobile navigation
-- Customer reviews slider
-- Modal windows
-- Product sections
-- Adaptive images and typography
-- Interactive JavaScript components
-
-## Technologies
-
-- HTML5
-- CSS3
-- JavaScript
-- Git
-- GitHub Pages
-
-## Run locally
+Откройте папку проекта в терминале и запустите статический сервер:
 
 ```bash
-git clone git@github.com:Cyberserk2077/shop-co.git
-cd shop-co
+python3 -m http.server 8000 --bind 127.0.0.1
+```
+
+Перейдите на `http://127.0.0.1:8000`. Подойдёт также Live Server в VS Code. Сборка и установка npm-пакетов не нужны. Открытие через `file://` не подходит для JavaScript-модулей.
+
+## Возможности
+
+- Адаптивная сетка товаров и секций, в том числе для экранов от 320 px.
+- Навигация по секциям и мобильное меню с Escape, удержанием фокуса и блокировкой фонового содержимого.
+- Слайдер отзывов Swiper 12 через CDN; при недоступности библиотеки отзывы отображаются сеткой.
+- Модальное окно заявки с доступными подписями, возвратом фокуса и закрытием по Escape, кнопке или фону.
+- Демонстрационные формы заявки и подписки: обязательные поля, проверка email, имени и телефона, сообщение о результате без перезагрузки.
+- Ссылка перехода к содержимому, видимый фокус и поддержка `prefers-reduced-motion`.
+- Без JavaScript доступны разделы, товары, навигационные ссылки и все отзывы; интерактивные кнопки скрыты, отправка форм отключена.
+
+## Границы демонстрации
+
+Это лендинг, а не действующий магазин. Поиска, корзины, аккаунтов, оплаты и сервера нет. Формы **ничего не отправляют и не сохраняют**: после проверки показывается явное сообщение о демонстрации. Отзывы, цены, показатели и платёжные логотипы — демонстрационный контент. Пункты подвала без страниц оформлены обычным текстом.
+
+## Код-стайл
+
+БЭМ-классы, стили по блокам в `css/blocks`, общие переменные в `css/variables.css`, JavaScript-модули в `scripts`. В изменённом коде используются табы, одинарные кавычки в CSS/JavaScript и JavaScript без точек с запятой.
+
+## Проверка
+
+Краткий отчёт и снимки экрана: [docs/REVIEW.md](docs/REVIEW.md). Изменения подготовлены локально; публикация отдельно не выполнялась.

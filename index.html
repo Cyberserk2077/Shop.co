@@ -3,7 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Shop.co</title>
+		<title>Shop.co — одежда, которая выражает твой стиль</title>
+		<meta
+			name="description"
+			content="Shop.co — демонстрационная витрина современной одежды: новые поступления, популярные модели и вдохновение для вашего стиля."
+		/>
 
 		<link href="./css/main.css" rel="stylesheet" />
 		<link
@@ -13,26 +17,42 @@
 		<link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon" />
 		<script
 			src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
-			defer
+			async
 		></script>
 		<script src="./scripts/main.js" type="module"></script>
 	</head>
 	<body class="page__body">
+		<a class="skip-link" href="#main">Перейти к содержимому</a>
+		<noscript
+			><p class="page__notice container">
+				Это демонстрационный лендинг. Для меню и проверки форм включите
+				JavaScript. Товары и отзывы доступны ниже.
+			</p></noscript
+		>
 		<header class="header">
 			<div class="header__promo">
 				<div class="header__promo-inner container">
 					<div class="header__promo-inner-wrapper">
 						<p class="header__promo-text hidden-tablet">
-							Зарегистрируйтесь и получите скидку 20% на первую покупку.
+							Новая коллекция — найди свой стиль.
 						</p>
-						<a class="header__promo-link" href="/">Зарегистрироваться сейчас</a>
+						<a class="header__promo-link" href="#new-arrivals"
+							>Смотреть новинки</a
+						>
 					</div>
 					<button
 						class="header__promo-close-button"
+						hidden
 						type="button"
 						aria-label="Закрыть предложение"
 					>
-						<svg class="header__promo-close-button-icon" width="20" height="20">
+						<svg
+							aria-hidden="true"
+							focusable="false"
+							class="header__promo-close-button-icon"
+							width="20"
+							height="20"
+						>
 							<use href="./icons/sprite.svg#cross-white"></use>
 						</svg>
 					</button>
@@ -43,11 +63,13 @@
 					<div class="header__body-inner-wrapper">
 						<button
 							class="header__burger-button burger-button visible-mobile"
+							type="button"
+							hidden
 							aria-label="Открыть меню"
 							aria-expanded="false"
 							aria-controls="header__menu"
 						>
-							<svg width="24" height="24">
+							<svg aria-hidden="true" focusable="false" width="24" height="24">
 								<use
 									class="burger-button__menu"
 									href="./icons/sprite.svg#burger"
@@ -68,18 +90,17 @@
 							/>
 						</a>
 					</div>
-					<nav class="header__menu">
+					<nav
+						class="header__menu"
+						id="header__menu"
+						aria-label="Основная навигация"
+					>
 						<ul class="header__menu-list">
 							<li class="header__menu-item">
-								<a class="header__menu-link" href="#">
-									Магазин
-									<svg class="header__menu-select-icon" width="16" height="16">
-										<use href="./icons/sprite.svg#select"></use>
-									</svg>
-								</a>
+								<a class="header__menu-link" href="#styles"> Выбрать стиль </a>
 							</li>
 							<li class="header__menu-item">
-								<a class="header__menu-link" href="#">Скидки</a>
+								<a class="header__menu-link" href="#top-sales">Лидеры продаж</a>
 							</li>
 							<li class="header__menu-item">
 								<a class="header__menu-link" href="#new-arrivals">
@@ -91,79 +112,30 @@
 							</li>
 						</ul>
 					</nav>
-					<form class="search-form hidden-desktop">
-						<label class="search-form__label">
-							<svg class="search-form__icon" width="24" height="24">
-								<use href="./icons/sprite.svg#search-light"></use>
-							</svg>
-							<input
-								class="search-form__input"
-								type="search"
-								name="search"
-								placeholder="Искать товары..."
-							/>
-						</label>
-					</form>
-					<div class="header__actions">
-						<button
-							class="header__actions-button hidden-desktop-above"
-							type="button"
-							aria-label="Искать товар"
-							title="Искать товар"
-						>
-							<svg class="header__search-icon" width="24" height="24">
-								<use href="./icons/sprite.svg#search-black"></use>
-							</svg>
-						</button>
-						<button
-							class="header__actions-button"
-							type="button"
-							aria-label="Корзина"
-							title="Корзина"
-						>
-							<svg class="header__order-icon" width="24" height="24">
-								<use href="./icons/sprite.svg#cart"></use>
-							</svg>
-						</button>
-						<button
-							class="header__actions-button"
-							type="button"
-							aria-label="Авторизоваться"
-							title="Авторизоваться"
-						>
-							<svg class="header__auth-icon" width="24" height="24">
-								<use href="./icons/sprite.svg#auth"></use>
-							</svg>
-						</button>
-					</div>
 				</div>
 			</div>
 		</header>
-		<main class="main">
+		<main class="main" id="main" tabindex="-1">
 			<section class="hero" aria-labelledby="hero-title">
 				<div class="hero__inner">
 					<div class="hero__body">
 						<div class="hero__body-inner container">
 							<div class="hero__main">
 								<h1 class="hero__title" id="hero-title">
-									НАЙДИ ОДЕЖДУ КОТОРАЯ ВЫРАЗИТ ТВОЙ СТИЛЬ
+									Найди одежду, которая выразит твой стиль
 								</h1>
 								<p class="hero__description">
-									Просмотрите наш набор тщательно сделанной одежды, созданный
-									чтобы подчеркнуть ваш индивидуальный стиль.
+									Откройте коллекцию современной одежды: от любимых базовых
+									вещей до выразительных образов, которые подчеркнут вашу
+									индивидуальность.
 								</p>
-								<button
-									class="hero__button button"
-									type="button"
-									data-js-modal-button="buy"
-									data-js-modal-speed="300"
+								<a class="hero__button button" href="#new-arrivals"
+									>Смотреть коллекцию</a
 								>
-									Купить сейчас
-								</button>
 								<div class="hero__metrics metrics">
 									<ul class="metrics__list">
 										<li class="metrics__item">
-											<div class="metrics__key">Всемирных брендов</div>
+											<div class="metrics__key">Мировых брендов</div>
 											<div class="metrics__value">
 												200<span class="metrics__sign">+</span>
 											</div>
@@ -171,13 +143,13 @@
 										<li class="metrics__item">
 											<div class="metrics__key">Качественных товаров</div>
 											<div class="metrics__value">
-												2,000<span class="metrics__sign">+</span>
+												2 000<span class="metrics__sign">+</span>
 											</div>
 										</li>
 										<li class="metrics__item">
 											<div class="metrics__key">Счастливых клиентов</div>
 											<div class="metrics__value">
-												30,000<span class="metrics__sign">+</span>
+												30 000<span class="metrics__sign">+</span>
 											</div>
 										</li>
 									</ul>
@@ -187,11 +159,15 @@
 								<img
 									class="hero__star hero__star--left"
 									src="./images/hero/star-s.svg"
+									width="56"
+									height="56"
 									alt=""
 								/>
 								<img
 									class="hero__star hero__star--right"
 									src="./images/hero/star-l.svg"
+									width="104"
+									height="104"
 									alt=""
 								/>
 								<picture>
@@ -302,7 +278,7 @@
 										<h3 class="product-card__title">Футболка с лентой</h3>
 										<div
 											class="product-card__rating-view rating-view"
-											aria-label="Рейтинг 5 звезд"
+											aria-label="Рейтинг 4,5 из 5"
 											title="Рейтинг 5 звезд"
 										>
 											<div class="rating-view__stars-wrapper">
@@ -331,7 +307,7 @@
 											</span>
 										</div>
 										<div class="product-card__price">
-											<span class="product-card__cost">₽5000</span>
+											<span class="product-card__cost">5&nbsp;000&nbsp;₽</span>
 										</div>
 									</footer>
 								</div>
@@ -358,7 +334,7 @@
 										<h3 class="product-card__title">Узкие джинсы</h3>
 										<div
 											class="product-card__rating-view rating-view"
-											aria-label="Рейтинг 5 звезд"
+											aria-label="Рейтинг 3,5 из 5"
 											title="Рейтинг 5 звезд"
 										>
 											<div class="rating-view__stars-wrapper">
@@ -386,12 +362,12 @@
 											class="product-card__price product-card__price--discount"
 										>
 											<span class="product-card__cost product-card__cost--new"
-												>₽5000</span
+												>5&nbsp;000&nbsp;₽</span
 											>
 											<span class="product-card__cost product-card__cost--old">
-												₽6000
+												6&nbsp;000&nbsp;₽
 											</span>
-											<span class="product-card__badge">-20%</span>
+											<span class="product-card__badge">−17%</span>
 										</div>
 									</footer>
 								</div>
@@ -418,7 +394,7 @@
 										<h3 class="product-card__title">Клетчатая рубашка</h3>
 										<div
 											class="product-card__rating-view rating-view"
-											aria-label="Рейтинг 5 звезд"
+											aria-label="Рейтинг 4,5 из 5"
 											title="Рейтинг 5 звезд"
 										>
 											<div class="rating-view__stars-wrapper">
@@ -446,7 +422,7 @@
 											</span>
 										</div>
 										<div class="product-card__price">
-											<span class="product-card__cost">₽7000</span>
+											<span class="product-card__cost">7&nbsp;000&nbsp;₽</span>
 										</div>
 									</footer>
 								</div>
@@ -473,7 +449,7 @@
 										<h3 class="product-card__title">Футболка с полосами</h3>
 										<div
 											class="product-card__rating-view rating-view"
-											aria-label="Рейтинг 5 звезд"
+											aria-label="Рейтинг 4,5 из 5"
 											title="Рейтинг 5 звезд"
 										>
 											<div class="rating-view__stars-wrapper">
@@ -501,12 +477,12 @@
 											class="product-card__price product-card__price--discount"
 										>
 											<span class="product-card__cost product-card__cost--new"
-												>₽6000</span
+												>6&nbsp;000&nbsp;₽</span
 											>
 											<span class="product-card__cost product-card__cost--old">
-												₽8000
+												8&nbsp;000&nbsp;₽
 											</span>
-											<span class="product-card__badge">-30%</span>
+											<span class="product-card__badge">−25%</span>
 										</div>
 									</footer>
 								</div>
@@ -516,12 +492,18 @@
 					<button
 						class="new-arrivals__button button button--transparent"
 						type="button"
+						data-js-modal-button="buy"
+						hidden
 					>
-						Просмотреть всё
+						Оставить заявку
 					</button>
 				</div>
 			</section>
-			<section class="top-sales" aria-labelledby="top-sales-title">
+			<section
+				class="top-sales"
+				id="top-sales"
+				aria-labelledby="top-sales-title"
+			>
 				<div class="top-sales__inner container">
 					<h2 class="top-sales__title" id="top-sales-title">Лидеры продаж</h2>
 					<div class="products">
@@ -548,7 +530,7 @@
 										<h3 class="product-card__title">Рубашка в полоску</h3>
 										<div
 											class="product-card__rating-view rating-view"
-											aria-label="Рейтинг 5 звезд"
+											aria-label="Рейтинг 5 из 5"
 											title="Рейтинг 5 звезд"
 										>
 											<div class="rating-view__stars-wrapper">
@@ -579,12 +561,12 @@
 											class="product-card__price product-card__price--discount"
 										>
 											<span class="product-card__cost product-card__cost--new"
-												>₽5000</span
+												>5&nbsp;000&nbsp;₽</span
 											>
 											<span class="product-card__cost product-card__cost--old">
-												₽6000
+												6&nbsp;000&nbsp;₽
 											</span>
-											<span class="product-card__badge">-20%</span>
+											<span class="product-card__badge">−17%</span>
 										</div>
 									</footer>
 								</div>
@@ -600,7 +582,7 @@
 											<img
 												class="product-card__image"
 												src="./images/top-sales/2.png"
-												alt="Оранжевая футболка с белой надписю 'Courage' посередине"
+												alt="Оранжевая футболка с белой надписью 'Courage' посередине"
 												width="295"
 												height="298"
 												loading="lazy"
@@ -611,7 +593,7 @@
 										<h3 class="product-card__title">Футболка «Courage»</h3>
 										<div
 											class="product-card__rating-view rating-view"
-											aria-label="Рейтинг 5 звезд"
+											aria-label="Рейтинг 4 из 5"
 											title="Рейтинг 5 звезд"
 										>
 											<div class="rating-view__stars-wrapper">
@@ -636,7 +618,7 @@
 											</span>
 										</div>
 										<div class="product-card__price">
-											<span class="product-card__cost">₽5000</span>
+											<span class="product-card__cost">5&nbsp;000&nbsp;₽</span>
 										</div>
 									</footer>
 								</div>
@@ -663,7 +645,7 @@
 										<h3 class="product-card__title">Свободные бермуды</h3>
 										<div
 											class="product-card__rating-view rating-view"
-											aria-label="Рейтинг 5 звезд"
+											aria-label="Рейтинг 3 из 5"
 											title="Рейтинг 5 звезд"
 										>
 											<div class="rating-view__stars-wrapper">
@@ -685,7 +667,7 @@
 											</span>
 										</div>
 										<div class="product-card__price">
-											<span class="product-card__cost">₽4000</span>
+											<span class="product-card__cost">4&nbsp;000&nbsp;₽</span>
 										</div>
 									</footer>
 								</div>
@@ -709,10 +691,10 @@
 										</picture>
 									</header>
 									<footer class="product-card__footer">
-										<h3 class="product-card__title">Потертые узкие джинсы</h3>
+										<h3 class="product-card__title">Потёртые узкие джинсы</h3>
 										<div
 											class="product-card__rating-view rating-view"
-											aria-label="Рейтинг 5 звезд"
+											aria-label="Рейтинг 4,5 из 5"
 											title="Рейтинг 5 звезд"
 										>
 											<div class="rating-view__stars-wrapper">
@@ -740,7 +722,7 @@
 											</span>
 										</div>
 										<div class="product-card__price">
-											<span class="product-card__cost">₽7000</span>
+											<span class="product-card__cost">7&nbsp;000&nbsp;₽</span>
 										</div>
 									</footer>
 								</div>
@@ -750,12 +732,18 @@
 					<button
 						class="top-sales__button button button--transparent"
 						type="button"
+						data-js-modal-button="buy"
+						hidden
 					>
-						Просмотреть всё
+						Оставить заявку
 					</button>
 				</div>
 			</section>
-			<section class="your-style" aria-labelledby="your-style-title">
+			<section
+				class="your-style"
+				id="styles"
+				aria-labelledby="your-style-title"
+			>
 				<div class="your-style__inner container">
 					<h2 class="your-style__title" id="your-style-title">
 						Выбери свой&nbsp;стиль
@@ -781,7 +769,7 @@
 								<img
 									class="your-style__list-image"
 									src="./images/your-style/2.jpg"
-									alt="Мужчина в белой рубашке и черном пиджаке в белую клетку"
+									alt="Мужчина в белой рубашке и чёрном пиджаке в белую клетку"
 									width="2052"
 									height="867"
 									loading="lazy"
@@ -809,7 +797,7 @@
 								<img
 									class="your-style__list-image"
 									src="./images/your-style/4.jpg"
-									alt="Мужчина в синей майке с ганетелей в руке"
+									alt="Мужчина в синей майке с гантелью в руке"
 									width="1062"
 									height="867"
 									loading="lazy"
@@ -820,17 +808,37 @@
 					</ul>
 				</div>
 			</section>
-			<section class="about" aria-labelledby="about-title">
+			<section class="about" id="reviews" aria-labelledby="about-title">
 				<header class="about__header container">
 					<h2 class="about__title" id="about-title">ЧТО О НАС ГОВОРЯТ</h2>
-					<div class="about__controls">
-						<button class="about__button about__prev-button" type="button">
-							<svg class="about__icon" width="24" height="24">
+					<div class="about__controls" hidden>
+						<button
+							class="about__button about__prev-button"
+							type="button"
+							aria-label="Предыдущий отзыв"
+						>
+							<svg
+								aria-hidden="true"
+								focusable="false"
+								class="about__icon"
+								width="24"
+								height="24"
+							>
 								<use href="./icons/controls.svg#arrow-prev"></use>
 							</svg>
 						</button>
-						<button class="about__button about__next-button" type="button">
-							<svg class="about__icon" width="24" height="24">
+						<button
+							class="about__button about__next-button"
+							type="button"
+							aria-label="Следующий отзыв"
+						>
+							<svg
+								aria-hidden="true"
+								focusable="false"
+								class="about__icon"
+								width="24"
+								height="24"
+							>
 								<use href="./icons/controls.svg#arrow-next"></use>
 							</svg>
 						</button>
@@ -1046,16 +1054,34 @@
 					</div>
 				</div>
 			</section>
-			<section class="last-news" aria-labelledby="last-news-title">
+			<section
+				class="last-news"
+				id="last-news"
+				aria-labelledby="last-news-title"
+			>
 				<div class="last-news__inner container">
 					<div class="last-news__banner">
 						<h2 class="last-news__title" id="last-news-title">
 							БУДЬТЕ В КУРСЕ ВСЕХ ПОСЛЕДНИХ НОВОСТЕЙ
 						</h2>
 						<div class="last-news__subscribe">
-							<form class="last-news__subscribe-form">
+							<form
+								class="last-news__subscribe-form"
+								data-js-demo-form
+								aria-describedby="subscribe-note"
+							>
+								<p class="form-note" id="subscribe-note">
+									Демонстрационная форма. Данные никуда не передаются.
+								</p>
 								<label class="last-news__subscribe-label">
-									<svg class="last-news__subscribe-icon" width="24" height="24">
+									<span class="visually-hidden">Электронная почта</span>
+									<svg
+										aria-hidden="true"
+										focusable="false"
+										class="last-news__subscribe-icon"
+										width="24"
+										height="24"
+									>
 										<use href="./icons/sprite.svg#email"></use>
 									</svg>
 									<input
@@ -1063,12 +1089,19 @@
 										type="email"
 										name="email"
 										placeholder="Ваша почта"
+										autocomplete="email"
+										required
 									/>
 								</label>
+								<button
+									class="last-news__subscribe-button button"
+									type="submit"
+									disabled
+								>
+									Проверить форму подписки
+								</button>
+								<p class="form-status" role="status" aria-live="polite"></p>
 							</form>
-							<button class="last-news__subscribe-button button" type="submit">
-								Подписаться на рассылку
-							</button>
 						</div>
 					</div>
 				</div>
@@ -1077,7 +1110,7 @@
 		<footer class="footer">
 			<div class="footer__body">
 				<div class="footer__body-inner container">
-					<nav class="footer__menu">
+					<div class="footer__menu">
 						<div class="footer__menu-column footer__menu-column--large">
 							<a class="footer__logo logo" href="./index.html">
 								<img
@@ -1092,181 +1125,148 @@
 								У нас есть одежда, что подходит вашему стилю и которой можно
 								гордиться. Для женщин и мужчин.
 							</p>
-							<div class="footer__soc1als soc1als">
-								<ul class="soc1als__list">
-									<li class="soc1als__item">
-										<a class="soc1als__link" href="/" target="_blank">
-											<svg class="soc1als__icon" width="28" height="28">
-												<use href="./icons/socials.svg#twitter"></use>
-											</svg>
-										</a>
-									</li>
-									<li class="soc1als__item">
-										<a class="soc1als__link" href="/" target="_blank">
-											<svg class="soc1als__icon" width="28" height="28">
-												<use href="./icons/socials.svg#facebook"></use>
-											</svg>
-										</a>
-									</li>
-									<li class="soc1als__item">
-										<a class="soc1als__link" href="/" target="_blank">
-											<svg class="soc1als__icon" width="28" height="28">
-												<use href="./icons/socials.svg#instagramm"></use>
-											</svg>
-										</a>
-									</li>
-									<li class="soc1als__item">
-										<a class="soc1als__link" href="/" target="_blank">
-											<svg class="soc1als__icon" width="28" height="28">
-												<use href="./icons/socials.svg#github"></use>
-											</svg>
-										</a>
-									</li>
-								</ul>
-							</div>
 						</div>
 						<div class="footer__menu-column">
-							<a class="footer__menu-main-link" href="/">Компания</a>
+							<h3 class="footer__menu-title">Компания</h3>
 							<ul class="footer__menu-list">
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank"
-										>О нас
-									</a>
+									<span class="footer__menu-text">О нас </span>
 								</li>
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank"
-										>Функции
-									</a>
+									<span class="footer__menu-text">Функции </span>
 								</li>
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank">
-										Работы
-									</a>
+									<span class="footer__menu-text"> Работы </span>
 								</li>
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank"
-										>Карьера
-									</a>
+									<span class="footer__menu-text">Карьера </span>
 								</li>
 							</ul>
 						</div>
 						<div class="footer__menu-column">
-							<a class="footer__menu-main-link" href="/">Помощь</a>
+							<h3 class="footer__menu-title">Помощь</h3>
 							<ul class="footer__menu-list">
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank"
-										>Поддержка
-									</a>
+									<span class="footer__menu-text">Поддержка </span>
 								</li>
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank"
-										>Доставка
-									</a>
+									<span class="footer__menu-text">Доставка </span>
 								</li>
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank"
-										>Условия
-									</a>
+									<span class="footer__menu-text">Условия </span>
 								</li>
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank"
-										>Политика
-									</a>
+									<span class="footer__menu-text">Политика </span>
 								</li>
 							</ul>
 						</div>
 						<div class="footer__menu-column">
-							<a class="footer__menu-main-link" href="/">Вопросы</a>
+							<h3 class="footer__menu-title">Вопросы</h3>
 							<ul class="footer__menu-list">
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank"
-										>Аккаунт
-									</a>
+									<span class="footer__menu-text">Аккаунт </span>
 								</li>
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank"
-										>О доставке
-									</a>
+									<span class="footer__menu-text">О доставке </span>
 								</li>
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank"
-										>Заказы
-									</a>
+									<span class="footer__menu-text">Заказы </span>
 								</li>
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank"
-										>Платежи
-									</a>
+									<span class="footer__menu-text">Платежи </span>
 								</li>
 							</ul>
 						</div>
 						<div class="footer__menu-column">
-							<a class="footer__menu-main-link" href="/">Ресурсы</a>
+							<h3 class="footer__menu-title">Ресурсы</h3>
 							<ul class="footer__menu-list">
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank"
-										>Бесплатные книги
-									</a>
+									<span class="footer__menu-text">Бесплатные книги </span>
 								</li>
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank"
-										>Уроки
-									</a>
+									<span class="footer__menu-text">Уроки </span>
 								</li>
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank">Блог</a>
+									<span class="footer__menu-text">Блог</span>
 								</li>
 								<li class="footer__menu-item">
-									<a class="footer__menu-link" href="/" target="_blank"
-										>Плейлис на YouTube
-									</a>
+									<span class="footer__menu-text">Плейлист на YouTube </span>
 								</li>
 							</ul>
 						</div>
-					</nav>
+					</div>
 				</div>
 			</div>
 			<div class="footer__extra">
 				<div class="footer__extra-inner container">
 					<p class="footer__copyright">
-						Shop.co &copy;
-						<time datetime="2000">2000</time>
-						-
-						<time datetime="2023">2023 </time>
-						. Все права защищены
+						Shop.co &copy; 2026 · Демонстрационный проект
 					</p>
-					<ul class="footer__payment-list">
+					<ul
+						class="footer__payment-list"
+						aria-label="Примеры платёжных систем"
+					>
 						<li class="footer__payment-list-item">
 							<div class="payment-card">
-								<svg class="payment-card__icon" width="33" height="11">
+								<svg
+									role="img"
+									class="payment-card__icon"
+									width="33"
+									height="11"
+								>
+									<title>Visa</title>
 									<use href="./icons/payment.svg#visa"></use>
 								</svg>
 							</div>
 						</li>
 						<li class="footer__payment-list-item">
 							<div class="payment-card">
-								<svg class="payment-card__icon" width="26" height="16">
+								<svg
+									role="img"
+									class="payment-card__icon"
+									width="26"
+									height="16"
+								>
+									<title>Mastercard</title>
 									<use href="./icons/payment.svg#mastercard"></use>
 								</svg>
 							</div>
 						</li>
 						<li class="footer__payment-list-item">
 							<div class="payment-card">
-								<svg class="payment-card__icon" width="35" height="10">
+								<svg
+									role="img"
+									class="payment-card__icon"
+									width="35"
+									height="10"
+								>
+									<title>PayPal</title>
 									<use href="./icons/payment.svg#paypal"></use>
 								</svg>
 							</div>
 						</li>
 						<li class="footer__payment-list-item">
 							<div class="payment-card">
-								<svg class="payment-card__icon" width="27" height="12">
+								<svg
+									role="img"
+									class="payment-card__icon"
+									width="27"
+									height="12"
+								>
+									<title>Apple Pay</title>
 									<use href="./icons/payment.svg#apple-pay"></use>
 								</svg>
 							</div>
 						</li>
 						<li class="footer__payment-list-item">
 							<div class="payment-card">
-								<svg class="payment-card__icon" width="29" height="12">
+								<svg
+									role="img"
+									class="payment-card__icon"
+									width="29"
+									height="12"
+								>
+									<title>Google Pay</title>
 									<use href="./icons/payment.svg#google-pay"></use>
 								</svg>
 							</div>
@@ -1276,7 +1276,15 @@
 			</div>
 		</footer>
 		<div class="modal">
-			<div class="modal__window modal-buy" data-js-modal-window="buy">
+			<div
+				class="modal__window modal-buy"
+				data-js-modal-window="buy"
+				role="dialog"
+				aria-modal="true"
+				aria-labelledby="buy-title"
+				aria-describedby="buy-note"
+				tabindex="-1"
+			>
 				<button
 					class="modal__close-button"
 					type="button"
@@ -1284,7 +1292,7 @@
 					title="Закрыть"
 					data-js-modal-close
 				>
-					<svg width="24" height="24">
+					<svg aria-hidden="true" focusable="false" width="24" height="24">
 						<use
 							class="modal__close-icon"
 							href="./icons/sprite.svg#cross-gray"
@@ -1292,36 +1300,48 @@
 					</svg>
 				</button>
 				<div class="modal__content modal-buy__content">
-					<h3 class="modal-buy__title">Заявка на заказ</h3>
-					<form class="modal-buy__form">
+					<h2 class="modal-buy__title" id="buy-title">Заявка на заказ</h2>
+					<p class="form-note" id="buy-note">
+						Демонстрационная форма. Данные никуда не передаются.
+					</p>
+					<form class="modal-buy__form" data-js-demo-form>
 						<label class="modal-buy__label">
+							<span>Ваше имя</span>
 							<input
 								class="modal-buy__input"
 								type="text"
 								name="name"
+								autocomplete="name"
 								placeholder="Ваше имя"
 								required
 							/>
 						</label>
 						<label class="modal-buy__label">
+							<span>Номер телефона</span>
 							<input
 								class="modal-buy__input"
 								type="tel"
 								name="phone"
+								autocomplete="tel"
 								placeholder="Номер телефона"
 								required
 							/>
 						</label>
 						<label class="modal-buy__label">
+							<span>Электронная почта</span>
 							<input
 								class="modal-buy__input"
 								type="email"
 								name="email"
+								autocomplete="email"
 								placeholder="E-mail"
 								required
 							/>
 						</label>
-						<button class="modal-buy__submit" type="button">Отправить</button>
+						<button class="modal-buy__submit" type="submit" disabled>
+							Проверить заявку
+						</button>
+						<p class="form-status" role="status" aria-live="polite"></p>
 					</form>
 				</div>
 			</div>

@@ -1,6 +1,6 @@
 .metrics__list {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 @media (width <= 768px) {
@@ -25,7 +25,7 @@
 
 @media (width <= 768px) {
 	.metrics__item {
-		padding-inline: 28px;
+		padding-inline: 16px;
 	}
 }
 
@@ -58,7 +58,7 @@
 }
 
 .metrics__key {
-	white-space: nowrap;
+	line-height: 1.4;
 }
 
 @media (width > 768px) {

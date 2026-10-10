@@ -1,5 +1,5 @@
 .header__promo {
-	padding-block: 9px;
+	padding-block: 2px;
 	color: var(--color-light);
 	background-color: var(--color-dark);
 }
@@ -7,15 +7,17 @@
 .header__promo-inner {
 	display: flex;
 	align-items: center;
-	justify-content: end;
-	column-gap: clamp(5.125rem, -25.29rem + 47.6vw, 17.5rem);
+	justify-content: center;
+	gap: 16px;
 }
 
 .header__promo-inner-wrapper {
 	display: flex;
 	align-items: center;
 	gap: 5px;
-	white-space: nowrap;
+	flex-wrap: wrap;
+	justify-content: center;
+	text-align: center;
 }
 
 @media (width > 768px) {
@@ -39,8 +41,10 @@
 .header__promo-close-button {
 	display: flex;
 	align-items: center;
-	width: 24px;
-	height: 24px;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 44px;
+	height: 44px;
 }
 
 .header__body {
@@ -51,6 +55,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: 24px;
 }
 
 @media (width > 768px) {
@@ -69,28 +74,28 @@
 }
 
 @media (width <= 768px) {
-	.header__menu {
+	.header--enhanced .header__menu {
 		position: fixed;
 		inset: 0;
 		z-index: var(--layer-2);
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 16px;
+		padding: 80px 16px 32px;
 		overflow-y: auto;
 		background-color: var(--color-light);
 		transition-duration: var(--transition-duration);
 	}
 
-	.header__menu--open {
+	.header--enhanced .header__menu--open {
 		opacity: 1;
 		visibility: visible;
 	}
 
-	.header__menu:not(.header__menu--open) {
+	.header--enhanced .header__menu:not(.header__menu--open) {
 		opacity: 0;
 		visibility: hidden;
-		translate: -100%;
+		translate: -100% 0;
 	}
 }
 
@@ -152,30 +157,12 @@
 	}
 }
 
-.header__actions {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-@media (width > 768px) {
-	.header__actions {
-		column-gap: 14px;
-	}
-}
-
 @media (width <= 768px) {
-	.header__actions {
-		column-gap: 12px;
+	.header__body {
+		padding-block: 16px;
 	}
-}
 
-.header__actions-button {
-	display: inline-flex;
-	width: 24px;
-	height: 24px;
-}
-
-.header__search-icon {
-	color: var(--color-dark);
+	.header:not(.header--enhanced) .header__body-inner {
+		flex-direction: column;
+	}
 }

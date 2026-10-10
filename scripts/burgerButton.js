@@ -1,153 +1,67 @@
+import { getFocusableElements, trapFocus, syncPageState } from './accessibility.js'
+
 export default class BurgerMenu {
-	constructor(config, headerFixedInstance = null) {
+	constructor(config) {
 		this.config = config
-		this.burgerButton = document.querySelector(`.${this.config.BURGER}`)
-		this.burgerMenu = document.querySelector(`.${this.config.HEADER_MENU}`)
-		this.body = document.querySelector(`.${this.config.PAGE_BODY}`)
-		this.headerFixedInstance = headerFixedInstance
-		this.main = document.querySelector(`.${this.config.MAIN}`)
+		this.burgerButton = document.querySelector(`.${config.BURGER}`)
+		this.burgerMenu = document.querySelector(`.${config.HEADER_MENU}`)
+		this.mobileQuery = window.matchMedia(`(width <= ${config.BREAKPOINT}px)`)
 
-		if (!this.burgerButton || !this.burgerMenu || !this.body) {
-			throw new Error('Required DOM elements are missing.')
-		}
+		if (!this.burgerButton || !this.burgerMenu) return
 
-		this.isMobileView = window.innerWidth <= this.config.BREAKPOINT
-
-		this.onBurgerClick = this.onBurgerClick.bind(this)
-		this.onBodyClick = this.onBodyClick.bind(this)
-		this.handleTouchStart = this.handleTouchStart.bind(this)
-		this.handleTouchMove = this.handleTouchMove.bind(this)
-		this.handleTouchEnd = this.handleTouchEnd.bind(this)
-		this.onWindowResize = this.onWindowResize.bind(this)
-
-		this.manageEvents()
-		window.addEventListener('resize', this.onWindowResize)
-	}
-
-	manageEvents() {
-		if (this.isMobileView) {
-			this.initEvents()
-		} else {
-			this.removeEvents()
-			this.hideBurgerMenu()
-		}
-	}
-
-	initEvents() {
-		// Click events
-		this.burgerButton.addEventListener('click', this.onBurgerClick)
-		this.body.addEventListener('click', this.onBodyClick)
-
-		// Touch events
-		this.body.addEventListener('touchstart', this.handleTouchStart)
-		this.body.addEventListener('touchmove', this.handleTouchMove)
-		this.body.addEventListener('touchend', this.handleTouchEnd)
-	}
-
-	removeEvents() {
-		// Click events
-		this.burgerButton.removeEventListener('click', this.onBurgerClick)
-		this.body.removeEventListener('click', this.onBodyClick)
-
-		// Touch events
-		this.body.removeEventListener('touchstart', this.handleTouchStart)
-		this.body.removeEventListener('touchmove', this.handleTouchMove)
-		this.body.removeEventListener('touchend', this.handleTouchEnd)
-	}
-
-	onWindowResize() {
-		const isNowMobileView = window.innerWidth <= this.config.BREAKPOINT
-
-		if (this.isMobileView !== isNowMobileView) {
-			this.isMobileView = isNowMobileView
-			this.manageEvents()
-		}
-	}
-
-	// Click events
-	onBurgerClick() {
-		const isOpen = this.burgerButton.classList.toggle(this.config.BURGER_OPEN)
-		this.burgerButton.ariaLabel = isOpen
-			? this.config.lABEL.CLOSE
-			: this.config.lABEL.OPEN
-		this.burgerButton.ariaExpanded = isOpen
-		this.burgerMenu.classList.toggle(this.config.HEADER_MENU_OPEN, isOpen)
-		this.body.classList.toggle(this.config.PAGE_BODY_NO_SCROLL, isOpen)
-
-		if (this.main) {
-			this.main.style.pointerEvents = isOpen ? 'none' : ''
-		}
-
-		if (this.headerFixedInstance) {
-			if (isOpen) {
-				this.headerFixedInstance.removeFixedClass()
-			} else {
-				this.headerFixedInstance.updateFixedClass()
+		this.burgerButton.hidden = false
+		document.querySelector('.header').classList.add('header--enhanced')
+		this.burgerButton.addEventListener('click', () => {
+			if (this.isOpen()) this.close()
+			else this.open()
+		})
+		this.burgerMenu.addEventListener('click', (event) => {
+			const link = event.target.closest(`.${config.MENU_LINK}`)
+			if (!link || !this.isOpen()) return
+			this.close(false)
+			const section = document.querySelector(link.hash)
+			if (section) {
+				section.tabIndex = -1
+				section.focus({ preventScroll: true })
 			}
-		}
+		})
+		document.addEventListener('keydown', (event) => {
+			if (!this.isOpen()) return
+			if (event.key === 'Escape') {
+				event.preventDefault()
+				this.close()
+			}
+			trapFocus(event, [this.burgerButton, ...getFocusableElements(this.burgerMenu)])
+		})
+		this.mobileQuery.addEventListener('change', () => {
+			if (this.mobileQuery.matches) return
+			const buttonFocused = document.activeElement === this.burgerButton
+			this.close(false)
+			if (buttonFocused) getFocusableElements(this.burgerMenu)[0]?.focus()
+		})
 	}
 
-	hideBurgerMenu() {
-		const wasOpen = this.isBurgerMenuOpen()
-		this.burgerButton.classList.remove(this.config.BURGER_OPEN)
-		this.burgerButton.ariaLabel = this.config.lABEL.OPEN
-		this.burgerButton.ariaExpanded = false
-		this.burgerMenu.classList.remove(this.config.HEADER_MENU_OPEN)
-		this.body.classList.remove(this.config.PAGE_BODY_NO_SCROLL)
-
-		if (this.main) {
-			this.main.style.pointerEvents = ''
-		}
-
-		if (wasOpen && this.headerFixedInstance) {
-			this.headerFixedInstance.updateFixedClass()
-		}
-	}
-
-	isBurgerMenuOpen() {
+	isOpen() {
 		return this.burgerMenu.classList.contains(this.config.HEADER_MENU_OPEN)
 	}
 
-	onBodyClick(event) {
-		const target = event.target
-		const isLinkInMenu = target.classList.contains(this.config.MENU_LINK)
-		const isMenuOpen = this.isBurgerMenuOpen()
-		const isClickOutsideMenu =
-			!target.closest(`.${this.config.HEADER_MENU}`) &&
-			!target.closest(`.${this.config.BURGER}`)
-
-		if (
-			(isLinkInMenu && window.innerWidth <= this.config.BREAKPOINT) ||
-			(isMenuOpen && isClickOutsideMenu)
-		) {
-			this.hideBurgerMenu()
-		}
+	open() {
+		if (!this.mobileQuery.matches) return
+		this.burgerMenu.classList.add(this.config.HEADER_MENU_OPEN)
+		this.burgerButton.classList.add(this.config.BURGER_OPEN)
+		this.burgerButton.setAttribute('aria-expanded', 'true')
+		this.burgerButton.setAttribute('aria-label', 'Закрыть меню')
+		syncPageState()
+		getFocusableElements(this.burgerMenu)[0]?.focus()
 	}
 
-	// Touch events
-	handleTouchStart(event) {
-		if (!this.isBurgerMenuOpen()) return
-		this.touchStartX = event.changedTouches[0].screenX
-		this.burgerMenu.style.transition = 'none'
-	}
-
-	handleTouchMove(event) {
-		if (!this.isBurgerMenuOpen()) return
-		const currentX = event.changedTouches[0].screenX
-		const translateX = Math.max(0, currentX - this.touchStartX)
-		this.burgerMenu.style.right = `-${translateX}px`
-	}
-
-	handleTouchEnd(event) {
-		if (!this.isBurgerMenuOpen()) return
-		const touchEndX = event.changedTouches[0].screenX
-		const swipeDistance = touchEndX - this.touchStartX
-
-		this.burgerMenu.style.transition = ''
-		this.burgerMenu.style.right = ''
-
-		if (swipeDistance > 70) {
-			this.hideBurgerMenu()
-		}
+	close(restoreFocus = true) {
+		const wasOpen = this.isOpen()
+		this.burgerMenu.classList.remove(this.config.HEADER_MENU_OPEN)
+		this.burgerButton.classList.remove(this.config.BURGER_OPEN)
+		this.burgerButton.setAttribute('aria-expanded', 'false')
+		this.burgerButton.setAttribute('aria-label', 'Открыть меню')
+		syncPageState()
+		if (wasOpen && restoreFocus) this.burgerButton.focus()
 	}
 }

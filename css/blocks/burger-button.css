@@ -1,18 +1,24 @@
 .burger-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  z-index: var(--layer-3);
-  width: 24px;
-  height: 24px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	z-index: var(--layer-3);
+	width: 44px;
+	height: 44px;
 }
 
 .burger-button__cross,
 .burger-button--open .burger-button__menu {
-  display: none;
+	display: none;
 }
 
 .burger-button__menu,
 .burger-button--open .burger-button__cross {
-  display: block;
+	display: block;
+}
+
+.burger-button--open {
+	position: fixed;
+	top: 16px;
+	right: 16px;
 }
